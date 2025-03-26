@@ -11,9 +11,10 @@ export default function MainPage() {
     <div>
       <Header />
       <HeroSliderCopy />
-      {/* <HeroSlider /> */}
+      <HeroSlider />
       <Socials />
       <AboutUs />
+
       <Footer />
     </div>
   );
