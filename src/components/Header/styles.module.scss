@@ -1,0 +1,88 @@
+@use "../../assets/styles/fonts.scss" as *;
+@use "../../assets/styles/variables.scss" as *;
+
+.container {
+  width: 100%;
+}
+
+.nav {
+  @include header();
+  background-color: $mainDark;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  height: 65px;
+  position: relative;
+  padding-right: 40px;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    margin-left: 170px;
+  }
+
+  &__logo {
+    width: 100px;
+    position: absolute;
+    top: 12px;
+    left: 40px;
+    z-index: 100;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+  }
+
+  &__item {
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      color: #b5b5b5;
+    }
+  }
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.contacts {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  &__messengers {
+    display: flex;
+    gap: 10px;
+
+    &__link {
+      display: flex;
+      align-items: center;
+    }
+
+    &__img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__phones {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 16px;
+    line-height: 100%;
+  }
+
+  &__number {
+    color: $mainWhite;
+  }
+}

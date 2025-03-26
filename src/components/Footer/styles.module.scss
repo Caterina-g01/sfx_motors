@@ -1,0 +1,16 @@
+@use "../../assets/styles/fonts.scss" as *;
+@use "../../assets/styles/variables.scss" as *;
+
+.wrapper {
+  width: 100%;
+  background-color: $mainDark;
+  height: fit-content;
+  @include footer();
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+.text {
+  text-align: center;
+}

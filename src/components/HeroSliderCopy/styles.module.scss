@@ -1,0 +1,156 @@
+@use "../../assets/styles/fonts.scss" as *;
+@use "../../assets/styles/variables.scss" as *;
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-15px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(15px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.sliderImg {
+  width: 100%;
+  max-height: 850px;
+  object-fit: cover;
+}
+
+.slide {
+  width: 94%;
+}
+
+.sliderContainer {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  max-height: 850px;
+  background-color: $mainDark;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.progressBarContainer {
+  position: absolute;
+  top: 0;
+  right: 5.5vw;
+  width: 5px;
+  height: 100%;
+  overflow: hidden;
+  transform: translateX(-50%);
+  z-index: 2000;
+}
+
+.progressBar {
+  height: 100%;
+  background-color: $red;
+  transform-origin: center;
+  transition: transform 0.1s linear;
+  z-index: 3000;
+}
+
+.slide:focus {
+  outline: none;
+}
+
+.slide {
+  position: relative;
+  max-height: 850px;
+  overflow: hidden;
+}
+
+.arrowRight,
+.arrowLeft {
+  width: 3.5vw;
+  cursor: pointer;
+  z-index: 200;
+  transition: transform 0.9s ease, opacity 0.9s ease;
+}
+
+.customPrevButton {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  position: absolute;
+  width: 6vw;
+  bottom: 0;
+  right: 6vw;
+  z-index: 10;
+  padding-bottom: 1vw;
+
+  &:hover .arrowLeft {
+    animation: moveLeft 1s linear infinite;
+  }
+}
+
+.customNextButton {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  position: absolute;
+  width: 6vw;
+  height: 100%;
+  bottom: 0;
+  z-index: 10;
+  right: 0;
+  background: linear-gradient(
+    to right,
+    rgba(27, 26, 26, 0.867),
+    rgba(0, 0, 0, 0.216)
+  );
+  padding-bottom: 1vw;
+
+  &:hover .arrowRight {
+    animation: moveRight 1s linear infinite;
+  }
+}
+
+.customPrevButton,
+.customNextButton {
+  position: absolute;
+  background-color: transparent;
+}
+
+.slideText {
+  position: absolute;
+  top: 23vw;
+  right: -24.5vw;
+  transform: rotate(270deg);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0),
+    rgba(88, 19, 19, 0.867)
+  );
+  width: 54vw;
+  height: 7vw;
+  z-index: 1000;
+  @include fontTitle2();
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

@@ -1,0 +1,42 @@
+@use "../../assets/styles/fonts.scss" as *;
+@use "../../assets/styles/variables.scss" as *;
+
+.socials {
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background-color: $mainDark;
+  padding: 50px 40px;
+  @include socials();
+}
+.contacts__text {
+  @include fontTitle2();
+}
+.contacts__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+}
+.contacts__link {
+  color: $mainWhite;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 5px;
+}
+.contacts__phones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.contacts__number {
+  color: $mainWhite;
+}
+
+.contacts__img {
+  width: 30px;
+}
