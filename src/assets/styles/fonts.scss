@@ -31,7 +31,7 @@
 }
 
 @mixin fontTitle2() {
-  @include fira-sans-extra-condense(28px, 400, 120%);
+  @include fira-sans-extra-condense(3vw, 400, 120%);
   color: $mainWhite;
 }
 

@@ -1,4 +1,3 @@
-import React from "react";
 import s from "./styles.module.scss";
 import WhatsApp from "../../assets/imgs/social/whatsapp.png";
 import Telegram from "../../assets/imgs/social/telegram.png";

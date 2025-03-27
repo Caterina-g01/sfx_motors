@@ -1,4 +1,3 @@
-import React from "react";
 import s from "./styles.module.scss";
 import YouTube from "../../assets/imgs/social/youtube.png";
 import Instagram from "../../assets/imgs/social/instagram.png";
