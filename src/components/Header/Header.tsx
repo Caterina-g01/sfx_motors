@@ -4,6 +4,17 @@ import Telegram from "../../assets/imgs/social/telegram.png";
 import Logo from "../../assets/imgs/SFXMotorsLogo.png";
 
 export default function Header() {
+  interface ScrollToSectionProps {
+    id: string;
+  }
+
+  const scrollToSection = (id: ScrollToSectionProps["id"]): void => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className={s.header}>
       <nav className={s.nav}>
@@ -11,10 +22,30 @@ export default function Header() {
           <div className={s.nav__content}>
             <img className={s.nav__logo} src={Logo} alt="Logo" />
             <ul className={s.nav__list}>
-              <li className={s.nav__item}>Техника</li>
-              <li className={s.nav__item}>Соцсети</li>
-              <li className={s.nav__item}>Отзывы</li>
-              <li className={s.nav__item}>О Нас</li>
+              <li
+                className={s.nav__item}
+                onClick={() => scrollToSection("catalog")}
+              >
+                Техника
+              </li>
+              <li
+                className={s.nav__item}
+                onClick={() => scrollToSection("socials")}
+              >
+                Соцсети
+              </li>
+              <li
+                className={s.nav__item}
+                onClick={() => scrollToSection("about")}
+              >
+                О Нас
+              </li>
+              <li
+                className={s.nav__item}
+                onClick={() => scrollToSection("feedbacks")}
+              >
+                Отзывы
+              </li>
             </ul>
           </div>
           <div className={s.contacts}>

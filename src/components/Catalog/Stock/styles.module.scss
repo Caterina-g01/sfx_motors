@@ -3,11 +3,18 @@
 
 .slideImg {
   width: 26vw;
+  transition: transform 0.4s ease-in-out;
 }
 
 .slide {
   padding: 1.5vw;
   cursor: pointer;
+}
+
+.slideWrapper {
+  width: 26vw;
+  overflow: hidden;
+  position: relative;
 }
 
 .sliderContainer {
@@ -20,4 +27,27 @@
   padding-top: 1vw;
   @include catalogDescription();
   text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  @include learnMore();
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.slideWrapper:hover .overlay {
+  opacity: 1;
+}
+
+.slideWrapper:hover .slideImg {
+  transform: scale(1.15);
 }

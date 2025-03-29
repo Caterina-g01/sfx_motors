@@ -11,10 +11,11 @@
   background-repeat: no-repeat;
 }
 .text {
+  padding: 2vw 3vw;
+  background-color: rgba(0, 0, 0, 0.198);
   position: absolute;
-  bottom: 40px;
+  bottom: 20px;
   right: 30px;
   width: 45vw;
-  @include aboutUs();
-  font-size: 1.7vw;
+  @include learnMore();
 }

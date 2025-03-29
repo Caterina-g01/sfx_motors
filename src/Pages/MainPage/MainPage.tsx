@@ -10,9 +10,15 @@ export default function MainPage() {
     <div>
       <Header />
       <HeroSlider />
-      <Catalog />
-      <Socials />
-      <AboutUs />
+      <section id="catalog">
+        <Catalog />
+      </section>
+      <section id="socials">
+        <Socials />
+      </section>
+      <section id="about">
+        <AboutUs />
+      </section>
       <Footer />
     </div>
   );

@@ -20,11 +20,14 @@ export default function Arrivals() {
       <Slider className={s.sliderContainer} {...settings}>
         {Data.catalog.arrivals.map((item, index) => (
           <div key={index} className={s.slide}>
-            <img
-              className={s.slideImg}
-              src={item.photos[0]}
-              alt={`Slide ${index + 1}`}
-            />
+            <div className={s.slideWrapper}>
+              <img
+                className={s.slideImg}
+                src={item.photos[0]}
+                alt={`Slide ${index + 1}`}
+              />
+              <div className={s.overlay}>Подробнее</div>
+            </div>
             <p className={s.modelName}>{item.params.model}</p>
           </div>
         ))}

@@ -37,6 +37,11 @@
   color: $mainDark;
 }
 
+@mixin learnMore() {
+  @include fira-sans-extra-condense(2vw, 400, 120%);
+  color: $mainWhite;
+}
+
 @mixin aboutUs() {
   @include fira-sans-extra-condense(22px, 400, 120%);
   color: $mainWhite;
