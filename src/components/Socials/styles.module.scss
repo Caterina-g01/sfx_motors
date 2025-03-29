@@ -17,9 +17,11 @@
   @include fontTitle2();
 }
 .contacts__links {
+  padding: 0 2vw;
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  gap: 80px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 .contacts__link {
   color: $mainWhite;
@@ -29,9 +31,10 @@
   gap: 5px;
 }
 .contacts__phones {
+  width: 40%;
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 .contacts__number {
   color: $mainWhite;

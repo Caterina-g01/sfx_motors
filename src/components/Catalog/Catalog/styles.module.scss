@@ -1,0 +1,53 @@
+@use "../../../assets/styles/fonts.scss" as *;
+@use "../../../assets/styles/variables.scss" as *;
+
+.container {
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.management {
+  width: fit-content;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  position: relative;
+  @include catalogActiveBtn();
+  margin-bottom: 20px;
+}
+
+.activeButton {
+  background-color: transparent;
+  position: relative;
+  @include catalogActiveBtn();
+}
+
+.button {
+  background-color: transparent;
+  @include catalogBtn();
+}
+
+.underline {
+  position: absolute;
+  bottom: -4px;
+  height: 5px;
+  background-color: $senape;
+  transition: all 0.3s ease-in-out;
+}
+
+.divisor {
+  position: relative;
+  display: flex;
+  height: 30px;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 1.5px;
+    height: 100%;
+    background-color: $grey;
+  }
+}

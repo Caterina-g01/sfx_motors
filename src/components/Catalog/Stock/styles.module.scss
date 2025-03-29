@@ -1,0 +1,23 @@
+@use "../../../assets/styles/fonts.scss" as *;
+@use "../../../assets/styles/variables.scss" as *;
+
+.slideImg {
+  width: 26vw;
+}
+
+.slide {
+  padding: 1.5vw;
+  cursor: pointer;
+}
+
+.sliderContainer {
+  width: 86%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.modelName {
+  padding-top: 1vw;
+  @include catalogDescription();
+  text-align: center;
+}

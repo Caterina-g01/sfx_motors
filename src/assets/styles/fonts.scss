@@ -16,8 +16,25 @@
 }
 
 @mixin socials() {
-  @include fira-sans-extra-condense(28px, 600, 120%);
+  @include fira-sans-extra-condense(2.2vw, 600, 120%);
   color: $mainWhite;
+}
+
+@mixin catalogActiveBtn() {
+  @include fira-sans-extra-condense(26px, 500, 120%);
+  text-transform: uppercase;
+  color: $mainDark;
+}
+
+@mixin catalogBtn() {
+  @include fira-sans-extra-condense(26px, 500, 120%);
+  text-transform: uppercase;
+  color: $grey;
+}
+
+@mixin catalogDescription() {
+  @include fira-sans-extra-condense(18px, 500, 120%);
+  color: $mainDark;
 }
 
 @mixin aboutUs() {
