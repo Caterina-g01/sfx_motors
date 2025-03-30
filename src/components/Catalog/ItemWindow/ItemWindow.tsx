@@ -1,5 +1,5 @@
+import { useState, useEffect } from "react";
 import s from "./styles.module.scss";
-import { useEffect } from "react";
 
 interface Product {
   photos: string[];
@@ -29,11 +29,11 @@ export default function ItemWindow({
   closeWindow,
   className,
 }: ItemWindowProps) {
+  const [activeSlide, setActiveSlide] = useState(product?.photos[0] || "");
+
   useEffect(() => {
     if (product) {
-      console.log("Текущий выбранный продукт:", product);
-    } else {
-      console.log("Продукт не выбран");
+      setActiveSlide(product.photos[0]);
     }
   }, [product]);
 
@@ -42,7 +42,7 @@ export default function ItemWindow({
   }
 
   return (
-    <div className={className} onClick={closeWindow}>
+    <div className={className}>
       <div className={s.main} onClick={(e) => e.stopPropagation()}>
         <button className={s.closeButton} onClick={closeWindow}>
           ✖
@@ -50,7 +50,7 @@ export default function ItemWindow({
 
         <img
           className={s.mainPhoto}
-          src={product.photos[0]}
+          src={activeSlide}
           alt={product.params.model}
         />
 
@@ -77,14 +77,15 @@ export default function ItemWindow({
       </div>
 
       <div className={s.slides}>
-        {/* {product.photos.map((photo, index) => (
+        {product.photos.map((photo, index) => (
           <img
             key={index}
             className={s.slideImg}
             src={photo}
             alt={`Фото ${index + 1}`}
+            onClick={() => setActiveSlide(photo)}
           />
-        ))} */}
+        ))}
       </div>
     </div>
   );

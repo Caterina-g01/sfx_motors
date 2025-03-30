@@ -59,7 +59,7 @@
   margin: 0 auto;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: space-between;
   @include catalogDescription();
   padding: 4vw 2vw;
   position: fixed;
@@ -69,7 +69,6 @@
   z-index: 9999;
   max-width: 1200px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
 }
 
 .overlay {

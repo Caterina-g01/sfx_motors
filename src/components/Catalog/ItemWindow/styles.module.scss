@@ -1,23 +1,10 @@
 @use "../../../assets/styles/fonts.scss" as *;
 @use "../../../assets/styles/variables.scss" as *;
 
-.container {
-  width: 90%;
-  background-color: rgba(129, 129, 129, 0.165);
-  height: fit-content;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  @include catalogDescription();
-  padding: 3vw 1.5vw;
-  position: relative;
-}
-
 .main {
   display: flex;
   flex-direction: column;
-  width: 48%;
+  width: 60%;
 }
 
 .info {
@@ -26,14 +13,9 @@
   gap: 0.3vw;
 }
 
-.slides {
-  display: flex;
-  width: 48%;
-}
-
 .prices {
   min-width: fit-content;
-  padding: 1.5vw 2vw 1vw 2vw;
+  padding: 1vw 2vw 0.5vw 2vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,7 +23,7 @@
   @include price();
 }
 .priceByn {
-  font-size: 2.8vw;
+  font-size: 2vw;
 }
 
 .byn {
@@ -73,4 +55,28 @@
   top: 1vw;
   cursor: pointer;
   background-color: transparent;
+  font-size: 2rem;
+  font-weight: 200;
+  border: none;
+  color: #333;
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.closeButton:hover {
+  color: #727272;
+  transform: rotate(90deg) scale(1.1);
+}
+
+.slides {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 38%;
+  height: 100px;
+}
+
+.slideImg {
+  width: 140px;
+  height: auto;
+  cursor: pointer;
 }
