@@ -54,7 +54,6 @@
 }
 
 .modal {
-  width: 90%;
   background-color: rgba(247, 247, 247, 0.962);
   height: fit-content;
   margin: 0 auto;
@@ -68,7 +67,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
-  max-width: 780px;
+  max-width: 1200px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
 }
