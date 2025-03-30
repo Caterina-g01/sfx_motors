@@ -33,8 +33,19 @@
 }
 
 @mixin catalogDescription() {
-  @include fira-sans-extra-condense(18px, 500, 120%);
+  @include fira-sans-extra-condense(1.6vw, 500, 120%);
   color: $mainDark;
+}
+
+@mixin modelName() {
+  @include fira-sans-extra-condense(2.4vw, 500, 120%);
+  color: $mainDark;
+  padding-left: 1vw;
+}
+
+@mixin price() {
+  @include fira-sans-extra-condense(1.6vw, 500, 140%);
+  color: $mainWhite;
 }
 
 @mixin learnMore() {

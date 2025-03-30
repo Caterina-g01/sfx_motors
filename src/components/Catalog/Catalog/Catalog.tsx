@@ -2,11 +2,14 @@ import { useState, useEffect, useRef } from "react";
 import s from "./styles.module.scss";
 import Stock from "../Stock/Stock";
 import Arrivals from "../Arrivals/Arrivals";
+import ItemWindow from "../ItemWindow/ItemWindow";
 
 export default function Catalog() {
   const [isInStock, setIsInStock] = useState(true);
   const [underlineStyle, setUnderlineStyle] = useState({});
-  const stockRef = useRef(null);
+  const stockRef = useRef<HTMLButtonElement | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   useEffect(() => {
     if (stockRef.current) {
@@ -18,10 +21,20 @@ export default function Catalog() {
   const handleClick = (
     isStock: boolean,
     event: React.MouseEvent<HTMLButtonElement>
-  ): void => {
+  ) => {
     setIsInStock(isStock);
     const { offsetLeft, offsetWidth } = event.target as HTMLButtonElement;
     setUnderlineStyle({ left: offsetLeft, width: offsetWidth });
+  };
+
+  const openModal = (product: Product) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const closeWindow = () => {
+    setIsModalOpen(false);
+    setSelectedProduct(null);
   };
 
   return (
@@ -46,9 +59,23 @@ export default function Catalog() {
           <div className={s.underline} style={underlineStyle}></div>
         </div>
         <div className={s.stockWrapper}>
-          {isInStock ? <Stock /> : <Arrivals />}
+          {isInStock ? (
+            <Stock openModal={openModal} />
+          ) : (
+            <Arrivals openModal={openModal} />
+          )}
         </div>
       </div>
+
+      {isModalOpen && <div className={s.overlay} onClick={closeWindow}></div>}
+
+      {isModalOpen && selectedProduct && (
+        <ItemWindow
+          className={s.modal}
+          product={selectedProduct}
+          closeWindow={closeWindow}
+        />
+      )}
     </div>
   );
 }

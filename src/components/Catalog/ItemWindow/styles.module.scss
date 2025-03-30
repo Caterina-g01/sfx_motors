@@ -1,0 +1,78 @@
+@use "../../../assets/styles/fonts.scss" as *;
+@use "../../../assets/styles/variables.scss" as *;
+
+.container {
+  width: 90%;
+  background-color: rgba(129, 129, 129, 0.165);
+  height: fit-content;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  @include catalogDescription();
+  padding: 3vw 1.5vw;
+  position: relative;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3vw;
+}
+
+.slides {
+  display: flex;
+  width: 48%;
+}
+
+.prices {
+  min-width: fit-content;
+  padding: 1.5vw 2vw 1vw 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $red;
+  @include price();
+}
+.priceByn {
+  font-size: 2.8vw;
+}
+
+.byn {
+  font-weight: 300;
+}
+
+.priceAndModel {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 1vw;
+}
+
+.model {
+  @include modelName();
+  margin-right: 1vw;
+  margin-top: 1vw;
+}
+
+.mainPhoto {
+  background-color: blueviolet;
+  height: 25vw;
+}
+
+.description {
+  margin-top: 3vw;
+}
+
+.closeButton {
+  position: absolute;
+  right: 1vw;
+  top: 1vw;
+  cursor: pointer;
+  background-color: transparent;
+}

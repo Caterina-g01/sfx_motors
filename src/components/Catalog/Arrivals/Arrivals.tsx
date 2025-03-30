@@ -5,7 +5,11 @@ import Data from "../../../Data";
 
 import s from "./styles.module.scss";
 
-export default function Arrivals() {
+interface ArrivalsProps {
+  openModal: () => void;
+}
+
+export default function Arrivals({ openModal }: ArrivalsProps) {
   const settings = {
     dots: true,
     infinite: false,
@@ -19,7 +23,7 @@ export default function Arrivals() {
     <>
       <Slider className={s.sliderContainer} {...settings}>
         {Data.catalog.arrivals.map((item, index) => (
-          <div key={index} className={s.slide}>
+          <div onClick={openModal} key={index} className={s.slide}>
             <div className={s.slideWrapper}>
               <img
                 className={s.slideImg}

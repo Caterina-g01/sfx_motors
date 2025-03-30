@@ -5,7 +5,11 @@ import Data from "../../../Data";
 
 import s from "./styles.module.scss";
 
-export default function Stock() {
+interface StockProps {
+  openModal: (product: Product) => void;
+}
+
+export default function Stock({ openModal }: StockProps) {
   const settings = {
     dots: true,
     infinite: false,
@@ -15,23 +19,28 @@ export default function Stock() {
     slidesPerRow: 3,
     centerPadding: "400px",
   };
+
   return (
-    <>
-      <Slider className={s.sliderContainer} {...settings}>
-        {Data.catalog.stock.map((item, index) => (
-          <div key={index} className={s.slide}>
-            <div className={s.slideWrapper}>
-              <img
-                className={s.slideImg}
-                src={item.photos[0]}
-                alt={`Slide ${index + 1}`}
-              />
-              <div className={s.overlay}>Подробнее</div>
-            </div>
-            <p className={s.modelName}>{item.params.model}</p>
+    <Slider className={s.sliderContainer} {...settings}>
+      {Data.catalog.stock.map((item, index) => (
+        <div
+          onClick={() => {
+            openModal(item);
+          }}
+          key={index}
+          className={s.slide}
+        >
+          <div className={s.slideWrapper}>
+            <img
+              className={s.slideImg}
+              src={item.photos[0]}
+              alt={item.params.model}
+            />
+            <div className={s.overlay}>Подробнее</div>
           </div>
-        ))}
-      </Slider>
-    </>
+          <p className={s.modelName}>{item.params.model}</p>
+        </div>
+      ))}
+    </Slider>
   );
 }

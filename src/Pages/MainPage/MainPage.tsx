@@ -4,6 +4,7 @@ import AboutUs from "../../components/AboutUs/AboutUs";
 import Footer from "../../components/Footer/Footer";
 import HeroSlider from "../../components/HeroSlider/HeroSlider";
 import Catalog from "../../components/Catalog/Catalog/Catalog";
+import ItemWindow from "../../components/Catalog/ItemWindow/ItemWindow";
 
 export default function MainPage() {
   return (
@@ -13,6 +14,7 @@ export default function MainPage() {
       <section id="catalog">
         <Catalog />
       </section>
+      <ItemWindow />
       <section id="socials">
         <Socials />
       </section>

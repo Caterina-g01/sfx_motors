@@ -1,5 +1,6 @@
 import imgOne from "./assets/imgs/1.jpeg";
 import imgTwo from "./assets/imgs/2.jpeg";
+import imgThree from "./assets/imgs/3.jpeg";
 
 const Data = {
   catalog: {
@@ -15,6 +16,7 @@ const Data = {
           model: "MV Agusta Dragster 800 RR",
           engine: "798cc 3-cylinder",
           transmission: "6-speed manual",
+          drive: "Кардан",
           mileage: "0 km",
         },
         description: "Новый спортбайк с мощным двигателем.",
@@ -31,6 +33,7 @@ const Data = {
           engine: "821cc L-Twin",
           transmission: "6-speed manual",
           mileage: "0 km",
+          drive: "Кардан",
           model: "Ducati Monster 821",
         },
         description: "Современный мотоцикл с агрессивным дизайном.",
@@ -47,6 +50,7 @@ const Data = {
           engine: "821cc L-Twin",
           transmission: "6-speed manual",
           mileage: "0 km",
+          drive: "Кардан",
           model: "Ducati Monster 821",
         },
         description: "Современный мотоцикл с агрессивным дизайном.",
@@ -62,6 +66,7 @@ const Data = {
         params: {
           engine: "821cc L-Twin",
           transmission: "6-speed manual",
+          drive: "Кардан",
           mileage: "0 km",
           model: "Ducati Monster 821",
         },
@@ -78,6 +83,7 @@ const Data = {
         params: {
           engine: "821cc L-Twin",
           transmission: "6-speed manual",
+          drive: "Кардан",
           mileage: "0 km",
           model: "Ducati Monster 821",
         },
@@ -95,6 +101,7 @@ const Data = {
           engine: "821cc L-Twin",
           transmission: "6-speed manual",
           mileage: "0 km",
+          drive: "Кардан",
           model: "Ducati Monster 821",
         },
         description: "Современный мотоцикл с агрессивным дизайном.",
@@ -111,6 +118,7 @@ const Data = {
           engine: "821cc L-Twin",
           transmission: "6-speed manual",
           mileage: "0 km",
+          drive: "Кардан",
           model: "Ducati Monster 821",
         },
         description: "Современный мотоцикл с агрессивным дизайном.",
@@ -127,6 +135,7 @@ const Data = {
           engine: "821cc L-Twin",
           transmission: "6-speed manual",
           mileage: "0 km",
+          drive: "Кардан",
           model: "Ducati Monster 821",
         },
         description: "Современный мотоцикл с агрессивным дизайном.",
@@ -143,6 +152,7 @@ const Data = {
           engine: "821cc L-Twin",
           transmission: "6-speed manual",
           mileage: "0 km",
+          drive: "Кардан",
           model: "Ducati Monster 821",
         },
         description: "Современный мотоцикл с агрессивным дизайном.",
@@ -159,6 +169,7 @@ const Data = {
           engine: "821cc L-Twin",
           transmission: "6-speed manual",
           mileage: "0 km",
+          drive: "Кардан",
           model: "Ducati Monster 821",
         },
         description: "Современный мотоцикл с агрессивным дизайном.",
@@ -175,6 +186,7 @@ const Data = {
           engine: "821cc L-Twin",
           transmission: "6-speed manual",
           mileage: "0 km",
+          drive: "Кардан",
           model: "Ducati Monster 821",
         },
         description: "Современный мотоцикл с агрессивным дизайном.",
@@ -185,7 +197,7 @@ const Data = {
       {
         id: 1,
         price: {
-          byn: 9000,
+          byn: 95000,
           rub: 280000,
           dollars: 3200,
         },
@@ -194,9 +206,10 @@ const Data = {
           engine: "689cc Parallel Twin",
           transmission: "6-speed manual",
           mileage: "5000 km",
+          drive: "Кардан",
         },
         description: "Лёгкий и манёвренный городской байк.",
-        photos: [imgOne, imgOne, imgOne],
+        photos: [imgTwo, imgOne, imgOne, imgOne],
       },
       {
         id: 2,
@@ -210,6 +223,7 @@ const Data = {
           engine: "689cc Parallel Twin",
           transmission: "6-speed manual",
           mileage: "5000 km",
+          drive: "Кардан",
         },
         description: "Лёгкий и манёвренный городской байк.",
         photos: [imgOne, imgOne, imgOne],
@@ -217,7 +231,7 @@ const Data = {
       {
         id: 3,
         price: {
-          byn: 9000,
+          byn: 95000,
           rub: 280000,
           dollars: 3200,
         },
@@ -226,14 +240,15 @@ const Data = {
           engine: "689cc Parallel Twin",
           transmission: "6-speed manual",
           mileage: "5000 km",
+          drive: "Кардан",
         },
         description: "Лёгкий и манёвренный городской байк.",
-        photos: [imgOne, imgOne, imgOne],
+        photos: [imgThree, imgOne, imgOne],
       },
       {
         id: 4,
         price: {
-          byn: 9000,
+          byn: 49000,
           rub: 280000,
           dollars: 3200,
         },
@@ -242,6 +257,7 @@ const Data = {
           engine: "689cc Parallel Twin",
           transmission: "6-speed manual",
           mileage: "5000 km",
+          drive: "Кардан",
         },
         description: "Лёгкий и манёвренный городской байк.",
         photos: [imgOne, imgOne, imgOne],
@@ -249,7 +265,7 @@ const Data = {
       {
         id: 5,
         price: {
-          byn: 9000,
+          byn: 39000,
           rub: 280000,
           dollars: 3200,
         },
@@ -258,14 +274,15 @@ const Data = {
           engine: "689cc Parallel Twin",
           transmission: "6-speed manual",
           mileage: "5000 km",
+          drive: "Кардан",
         },
         description: "Лёгкий и манёвренный городской байк.",
-        photos: [imgOne, imgOne, imgOne],
+        photos: [imgTwo, imgOne, imgOne],
       },
       {
         id: 6,
         price: {
-          byn: 9000,
+          byn: 29000,
           rub: 280000,
           dollars: 3200,
         },
@@ -274,14 +291,15 @@ const Data = {
           engine: "689cc Parallel Twin",
           transmission: "6-speed manual",
           mileage: "5000 km",
+          drive: "Кардан",
         },
         description: "Лёгкий и манёвренный городской байк.",
-        photos: [imgOne, imgOne, imgOne],
+        photos: [imgThree, imgOne, imgOne],
       },
       {
         id: 7,
         price: {
-          byn: 9000,
+          byn: 91000,
           rub: 280000,
           dollars: 3200,
         },
@@ -290,6 +308,7 @@ const Data = {
           engine: "689cc Parallel Twin",
           transmission: "6-speed manual",
           mileage: "5000 km",
+          drive: "Кардан",
         },
         description: "Лёгкий и манёвренный городской байк.",
         photos: [imgOne, imgOne, imgOne],
@@ -297,7 +316,7 @@ const Data = {
       {
         id: 8,
         price: {
-          byn: 9000,
+          byn: 10000,
           rub: 280000,
           dollars: 3200,
         },
@@ -306,9 +325,10 @@ const Data = {
           engine: "689cc Parallel Twin",
           transmission: "6-speed manual",
           mileage: "5000 km",
+          drive: "Кардан",
         },
         description: "Лёгкий и манёвренный городской байк.",
-        photos: [imgOne, imgOne, imgOne],
+        photos: [imgTwo, imgOne, imgOne],
       },
       {
         id: 9,
@@ -322,9 +342,10 @@ const Data = {
           engine: "689cc Parallel Twin",
           transmission: "6-speed manual",
           mileage: "5000 km",
+          drive: "Кардан",
         },
         description: "Лёгкий и манёвренный городской байк.",
-        photos: [imgOne, imgOne, imgOne],
+        photos: [imgThree, imgOne, imgOne],
       },
       {
         id: 10,
@@ -338,6 +359,7 @@ const Data = {
           engine: "689cc Parallel Twin",
           transmission: "6-speed manual",
           mileage: "5000 km",
+          drive: "Кардан",
         },
         description: "Лёгкий и манёвренный городской байк.",
         photos: [imgOne, imgOne, imgOne],
@@ -354,6 +376,7 @@ const Data = {
           engine: "689cc Parallel Twin",
           transmission: "6-speed manual",
           mileage: "5000 km",
+          drive: "Кардан",
         },
         description: "Лёгкий и манёвренный городской байк.",
         photos: [imgOne, imgOne, imgOne],
