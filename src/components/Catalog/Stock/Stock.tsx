@@ -23,7 +23,7 @@ interface Product {
 }
 
 interface StockProps {
-  openModal: (product: Product) => void;
+  openModal: (product: Product | null) => void;
 }
 
 export default function Stock({ openModal }: StockProps) {

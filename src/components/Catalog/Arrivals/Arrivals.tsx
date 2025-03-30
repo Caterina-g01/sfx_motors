@@ -23,7 +23,7 @@ interface Product {
 }
 
 interface ArrivalsProps {
-  openModal: (product: Product) => void;
+  openModal: (product: Product | null) => void;
 }
 
 export default function Arrivals({ openModal }: ArrivalsProps) {

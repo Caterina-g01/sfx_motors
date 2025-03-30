@@ -2,6 +2,33 @@ import imgOne from "./assets/imgs/1.jpeg";
 import imgTwo from "./assets/imgs/2.jpeg";
 import imgThree from "./assets/imgs/3.jpeg";
 
+export interface Product {
+  id: number;
+  photos: string[];
+  price: {
+    byn: number;
+    rub: number;
+    dollars: number;
+  };
+  params: {
+    model: string;
+    engine: string;
+    transmission: string;
+    drive: string;
+    mileage: string;
+  };
+  description: string;
+}
+
+export interface Catalog {
+  arrivals: Product[];
+  stock: Product[];
+}
+
+export interface Data {
+  catalog: Catalog;
+}
+
 const Data = {
   catalog: {
     arrivals: [

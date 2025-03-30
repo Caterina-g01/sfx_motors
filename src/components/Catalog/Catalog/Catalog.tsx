@@ -44,9 +44,9 @@ export default function Catalog() {
     setUnderlineStyle({ left: offsetLeft, width: offsetWidth });
   };
 
-  const openModal = (product: Product) => {
+  const openModal = (product: Product | null) => {
     setSelectedProduct(product);
-    setIsModalOpen(true);
+    setIsModalOpen(product !== null);
   };
 
   const closeWindow = () => {
