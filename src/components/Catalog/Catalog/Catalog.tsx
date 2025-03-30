@@ -4,6 +4,23 @@ import Stock from "../Stock/Stock";
 import Arrivals from "../Arrivals/Arrivals";
 import ItemWindow from "../ItemWindow/ItemWindow";
 
+interface Product {
+  photos: string[];
+  price: {
+    byn: number;
+    rub: number;
+    dollars: number;
+  };
+  params: {
+    model: string;
+    engine: string;
+    transmission: string;
+    drive: string;
+    mileage: string;
+  };
+  description: string;
+}
+
 export default function Catalog() {
   const [isInStock, setIsInStock] = useState(true);
   const [underlineStyle, setUnderlineStyle] = useState({});

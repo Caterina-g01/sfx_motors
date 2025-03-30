@@ -5,6 +5,23 @@ import Data from "../../../Data";
 
 import s from "./styles.module.scss";
 
+interface Product {
+  photos: string[];
+  price: {
+    byn: number;
+    rub: number;
+    dollars: number;
+  };
+  params: {
+    model: string;
+    engine: string;
+    transmission: string;
+    drive: string;
+    mileage: string;
+  };
+  description: string;
+}
+
 interface StockProps {
   openModal: (product: Product) => void;
 }

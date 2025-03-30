@@ -5,8 +5,25 @@ import Data from "../../../Data";
 
 import s from "./styles.module.scss";
 
+interface Product {
+  photos: string[];
+  price: {
+    byn: number;
+    rub: number;
+    dollars: number;
+  };
+  params: {
+    model: string;
+    engine: string;
+    transmission: string;
+    drive: string;
+    mileage: string;
+  };
+  description: string;
+}
+
 interface ArrivalsProps {
-  openModal: () => void;
+  openModal: (product: Product) => void;
 }
 
 export default function Arrivals({ openModal }: ArrivalsProps) {
@@ -23,7 +40,13 @@ export default function Arrivals({ openModal }: ArrivalsProps) {
     <>
       <Slider className={s.sliderContainer} {...settings}>
         {Data.catalog.arrivals.map((item, index) => (
-          <div onClick={openModal} key={index} className={s.slide}>
+          <div
+            onClick={() => {
+              openModal(item);
+            }}
+            key={index}
+            className={s.slide}
+          >
             <div className={s.slideWrapper}>
               <img
                 className={s.slideImg}
