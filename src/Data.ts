@@ -2,7 +2,7 @@ import imgOne from "./assets/imgs/1.jpeg";
 import imgTwo from "./assets/imgs/2.jpeg";
 import imgThree from "./assets/imgs/3.jpeg";
 
-export interface Product {
+export interface ProductItem {
   id: number;
   photos: string[];
   price: {
@@ -21,8 +21,8 @@ export interface Product {
 }
 
 export interface Catalog {
-  arrivals: Product[];
-  stock: Product[];
+  arrivals: ProductItem[];
+  stock: ProductItem[];
 }
 
 export interface Data {

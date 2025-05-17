@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import s from "./styles.module.scss";
-import Stock from "../Stock/Stock";
-import Arrivals from "../Arrivals/Arrivals";
 import ItemWindow from "../ItemWindow/ItemWindow";
+import { ProductList } from "../ProductList/ProductList";
+import Data from "../../../Data";
 
 interface Product {
   photos: string[];
@@ -27,7 +27,8 @@ export default function Catalog() {
   const stockRef = useRef<HTMLButtonElement | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-
+  const data = isInStock ? Data.catalog.stock : Data.catalog.arrivals;
+  
   useEffect(() => {
     if (stockRef.current) {
       const { offsetLeft, offsetWidth } = stockRef.current;
@@ -44,7 +45,7 @@ export default function Catalog() {
     setUnderlineStyle({ left: offsetLeft, width: offsetWidth });
   };
 
-  const openModal = (product: Product | null) => {
+  const handleOpenModal = (product: Product | null) => {
     setSelectedProduct(product);
     setIsModalOpen(product !== null);
   };
@@ -55,7 +56,7 @@ export default function Catalog() {
   };
 
   return (
-    <div>
+    <>
       <div className={s.container}>
         <div className={s.management}>
           <p className={s.text}>Техника</p>
@@ -76,11 +77,7 @@ export default function Catalog() {
           <div className={s.underline} style={underlineStyle}></div>
         </div>
         <div className={s.stockWrapper}>
-          {isInStock ? (
-            <Stock openModal={openModal} />
-          ) : (
-            <Arrivals openModal={openModal} />
-          )}
+          {<ProductList data={data} onOpenModal={handleOpenModal} />}
         </div>
       </div>
 
@@ -93,6 +90,6 @@ export default function Catalog() {
           closeWindow={closeWindow}
         />
       )}
-    </div>
+    </>
   );
 }
