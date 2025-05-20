@@ -2,33 +2,17 @@ import { useState, useEffect, useRef } from "react";
 import s from "./styles.module.scss";
 import ItemWindow from "../ItemWindow/ItemWindow";
 import { ProductList } from "../ProductList/ProductList";
-import Data from "../../../Data";
+import Data, { ProductItem } from "../../../Data";
 
-interface Product {
-  photos: string[];
-  price: {
-    byn: number;
-    rub: number;
-    dollars: number;
-  };
-  params: {
-    model: string;
-    engine: string;
-    transmission: string;
-    drive: string;
-    mileage: string;
-  };
-  description: string;
-}
 
-export default function Catalog() {
+export const Catalog: React.FC = ({ }) => {
   const [isInStock, setIsInStock] = useState(true);
   const [underlineStyle, setUnderlineStyle] = useState({});
   const stockRef = useRef<HTMLButtonElement | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null);
   const data = isInStock ? Data.catalog.stock : Data.catalog.arrivals;
-  
+
   useEffect(() => {
     if (stockRef.current) {
       const { offsetLeft, offsetWidth } = stockRef.current;
@@ -45,7 +29,7 @@ export default function Catalog() {
     setUnderlineStyle({ left: offsetLeft, width: offsetWidth });
   };
 
-  const handleOpenModal = (product: Product | null) => {
+  const handleOpenModal = (product: ProductItem | null) => {
     setSelectedProduct(product);
     setIsModalOpen(product !== null);
   };
@@ -56,7 +40,7 @@ export default function Catalog() {
   };
 
   return (
-    <>
+    <section id="catalog">
       <div className={s.container}>
         <div className={s.management}>
           <p className={s.text}>Техника</p>
@@ -90,6 +74,6 @@ export default function Catalog() {
           closeWindow={closeWindow}
         />
       )}
-    </>
+    </section>
   );
 }
