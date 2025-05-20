@@ -4,7 +4,7 @@ import MainPage from "./Pages/MainPage/MainPage";
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA_feEYfCgrywrRYQV2jIZwiSiBefFgXIg",
+  apiKey: import.meta.env.API_KEY,
   authDomain: "coach86-61f3f.firebaseapp.com",
   projectId: "coach86-61f3f",
   storageBucket: "coach86-61f3f.firebasestorage.app",
