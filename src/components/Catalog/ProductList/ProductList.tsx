@@ -3,6 +3,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import s from "./styles.module.scss";
 import { ProductItem } from "../../../Data";
+import { MotorbikeContext } from "../../../infrastructure";
+import { useContext } from "react";
 
 interface ProductListProps {
     onOpenModal: (item: ProductItem | null) => void;
@@ -10,6 +12,11 @@ interface ProductListProps {
 }
 
 export const ProductList: React.FC<ProductListProps> = ({ onOpenModal, data }) => {
+    const { isLoading, motorbikeList } = useContext(MotorbikeContext)
+
+    console.log(`Is Loading: ${isLoading}`)
+    console.log(`Motorbike list: ${motorbikeList}`)
+
     const settings = {
         dots: true,
         infinite: false,
@@ -30,7 +37,7 @@ export const ProductList: React.FC<ProductListProps> = ({ onOpenModal, data }) =
                     <div className={s.slideWrapper}>
                         <img
                             className={s.slideImg}
-                            src={item.photos[0]}
+                            src={item?.photos[0]}
                             alt={`Slide ${index + 1}`}
                         />
                         <div className={s.overlay}>Подробнее</div>
